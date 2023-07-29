@@ -7,7 +7,7 @@ export const uploadImage = async (req, res) => {
     }
     try {
         const file = await File.create(fileObject);
-        res.status(200).json({ path: `http://localhost:8000/file/${file._id}` })
+        res.status(200).json({ path: `https://server-file-sharing-app.onrender.com/file/${file._id}` })
     } catch (error) {
         res.status(500).json({error: error.message});
     }

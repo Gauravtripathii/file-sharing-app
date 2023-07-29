@@ -35,7 +35,7 @@ function App() {
         onChange={(event) => setFile(event.target.files[0])}
         />
 
-        <a href={result} target="_blank">{result}</a>
+        <a href={result} target="_blank" rel="noreferrer">{result}</a>
       </div>
     </div>
   );
