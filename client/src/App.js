@@ -7,10 +7,12 @@ import Loading from "./components/Loading";
 function App() {
   const [file, setFile] = useState('');
   const [result, setResult] = useState('');
+  const [clicks, setClicks] = useState(0);
   const fileInputRef = useRef();
 
   const onUploadClick = () => {
     fileInputRef.current.click();
+    setClicks(clicks+1);
   };
 
   useEffect(() => {
@@ -38,7 +40,7 @@ function App() {
         onChange={(event) => setFile(event.target.files[0])}
         />
 
-        {(result)?<Result result={result} />:<Loading/>}
+        {(result)?<Result result={result} />:<Loading clicks={clicks}/>}
       </div>
     </div>
   );
