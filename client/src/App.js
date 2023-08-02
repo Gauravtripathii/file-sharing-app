@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { uploadFile } from "./services/api";
 
+import Result from "./components/Result";
+import Loading from "./components/Loading";
+
 function App() {
   const [file, setFile] = useState('');
   const [result, setResult] = useState('');
@@ -35,7 +38,7 @@ function App() {
         onChange={(event) => setFile(event.target.files[0])}
         />
 
-        <a href={result} target="_blank" rel="noreferrer">{result}</a>
+        {(result)?<Result result={result} />:<Loading/>}
       </div>
     </div>
   );
