@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .app {
@@ -10,10 +11,11 @@
   background-color: #000;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
 .file-sharing-container {
-  border: 1px solid hotpink;
+  border: 2px solid hotpink;
   color: hotpink;
   text-align: center;
   width: 70%;
@@ -39,4 +41,14 @@ button {
 button:hover {
   background-color: hotpink;
   color: #000;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: cyan;
+  opacity: 0.8;
+  position: absolute;
+  pointer-events: none;
 }
